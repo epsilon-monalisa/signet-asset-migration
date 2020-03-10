@@ -1,0 +1,3 @@
+com\signet\migration\core\utils\AssetMovementConstants.class
+com\signet\migration\core\servlets\CustomWorflowManagerServlet.class
+com\signet\migration\core\utils\ResourceVisitor.class

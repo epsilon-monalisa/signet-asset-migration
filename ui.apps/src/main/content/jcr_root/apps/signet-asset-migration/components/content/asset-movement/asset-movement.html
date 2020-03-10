@@ -1,0 +1,65 @@
+<html lang="en-US">
+
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<sly
+	data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+<sly
+	data-sly-call="${clientlib.js @ categories='signet-asset-migration.base'}" />
+</sly>
+<sly
+	data-sly-call="${clientlib.css @ categories='signet-asset-migration.base'}" />
+
+
+<sly data-sly-call="${clientlib.all @ categories='coralui3'}" />
+
+
+<sly
+	data-sly-call="${clientlib.js @ categories='custom-workflow-trigger'}" />
+</sly>
+<sly
+	data-sly-call="${clientlib.css @ categories='custom-workflow-trigger'}" />
+<sly data-sly-call="${clientlib.all @ categories='cq.jquery'}" />
+
+<title>Signet Custom Asset Movement</title>
+</head>
+
+
+<body>
+	<div class="container">
+		<form id="signet-form" method="post" enctype="multipart/form-data">
+			<h2>
+				<b>Signet Custom Asset Movement</b>
+			</h2>
+
+			<fieldset>
+				<select name="action" id="action">
+					<option value="move">Asset Movement</option>
+				</select>
+			</fieldset>
+
+			<fieldset>
+				<div name="source" id="source">
+					<label>Source Folder:</label><br>
+					<sly
+						data-sly-resource="${'path' @ resourceType='granite/ui/components/coral/foundation/form/pathbrowser'}"></sly>
+				</div>
+			</fieldset>
+			<br>
+			<fieldset>
+				<div name="destn" id="destn">
+					<label>Destination Folder:</label><br>
+					<sly
+						data-sly-resource="${'path' @ resourceType='granite/ui/components/coral/foundation/form/pathbrowser'}"></sly>
+				</div>
+			</fieldset>
+			<br> <br>
+			<fieldset>
+				<button name="submit" type="submit" id="contact-submit"
+					data-submit="...Sending" onclick="postData()">Submit</button>
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>

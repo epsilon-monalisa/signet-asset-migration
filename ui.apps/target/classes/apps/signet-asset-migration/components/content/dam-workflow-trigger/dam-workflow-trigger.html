@@ -1,0 +1,49 @@
+<html lang="en-US">
+
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<sly
+	data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+<sly
+	data-sly-call="${clientlib.js @ categories='signet-asset-migration.base'}" />
+</sly>
+<sly data-sly-call="${clientlib.css @ categories='signet-asset-migration.base'}" />
+
+<sly
+	data-sly-call="${clientlib.js @ categories='custom-workflow-trigger'}" />
+</sly>
+<sly data-sly-call="${clientlib.css @ categories='custom-workflow-trigger'}" />
+<sly data-sly-call="${clientlib.all @ categories='cq.jquery'}" />
+
+<title>Signet Custom Workflow Manager</title>
+</head>
+
+
+<body>
+	<div class="container">
+		<form id="signet-form" action="/bin/signetWorflowTrigger" method="post" enctype="multipart/form-data">
+			<h2>
+				<b>Signet Custom Workflow Manager</b>
+			</h2>
+		    
+			<fieldset>
+				<select name="action" id="action">
+					<option value="/var/workflow/models/dam/update_asset">DAM Update Asset Workflow</option>
+					<option value="delete">Delete Action</option>
+				</select>
+			</fieldset>
+			
+			<fieldset>
+				<input placeholder="Browse File" type="file" tabindex="2" name="fileupload" value="fileupload" id="fileupload"
+					accept=".txt" required>
+			</fieldset>
+	
+			<fieldset>
+				<button name="submit" type="submit" id="contact-submit"
+					data-submit="...Sending">Submit</button>
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>
